@@ -1,0 +1,93 @@
+{
+  "name": "react-library-template",
+  "version": "0.0.0-development",
+  "description": "React Library Template.",
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "homepage": "https://github.com/adamelliotfields/react-library-template",
+  "bugs": "https://github.com/adamelliotfields/react-library-template/issues",
+  "license": "MIT",
+  "author": "Adam Fields (https://github.com/adamelliotfields)",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "main": "dist/index.js",
+  "unpkg": "dist/index.js",
+  "module": "dist/index.mjs",
+  "jsnext:main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "repository": "github:adamelliotfields/react-library-template",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/adamelliotfields"
+  },
+  "scripts": {
+    "build": "run-s clean bundle",
+    "build:storybook": "run-s clean:storybook bundle:storybook",
+    "bundle": "cross-env NODE_ENV=production rollup -c",
+    "bundle:storybook": "cross-env NODE_ENV=production build-storybook",
+    "clean": "rimraf dist",
+    "clean:storybook": "rimraf storybook-static",
+    "start": "start-storybook -p 6006",
+    "test": "cross-env NODE_ENV=test react-scripts test"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.0",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@semantic-release/git": "^9.0.0",
+    "@storybook/addon-centered": "^5.3.17",
+    "@storybook/addon-knobs": "^5.3.17",
+    "@storybook/addon-viewport": "^5.3.17",
+    "@storybook/preset-create-react-app": "^2.0.0",
+    "@storybook/react": "^5.3.17",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.2",
+    "@types/prop-types": "^15.7.3",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "babel-loader": "8.0.6",
+    "cross-env": "^7.0.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-flowtype": "^3.13.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "24.9.0",
+    "jest-enzyme": "^7.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^1.32.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "semantic-release": "^17.0.4",
+    "typescript": "^3.8.3",
+    "webpack": "4.41.5"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/index.{js,jsx,ts,tsx}",
+      "!src/stories/**/*.{js,jsx,ts,tsx}"
+    ]
+  }
+}
