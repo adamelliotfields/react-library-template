@@ -33,7 +33,7 @@
     "clean:storybook": "rimraf storybook-static",
     "lint": "eslint 'src/**/*'",
     "start": "start-storybook -p 6006",
-    "test": "cross-env NODE_ENV=test react-scripts test"
+    "test": "cross-env NODE_ENV=test react-scripts test --coverage"
   },
   "dependencies": {},
   "peerDependencies": {
