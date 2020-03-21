@@ -1,12 +1,12 @@
 {
-  "name": "react-library-template",
-  "version": "1.0.0",
+  "name": "@adamelliotfields/react-library-template",
+  "version": "0.0.0-development",
   "description": "React Library Template.",
   "keywords": [
     "react",
     "react-component"
   ],
-  "homepage": "https://github.com/adamelliotfields/react-library-template",
+  "homepage": "https://github.com/adamelliotfields/react-library-template#readme",
   "bugs": "https://github.com/adamelliotfields/react-library-template/issues",
   "license": "MIT",
   "author": "Adam Fields (https://github.com/adamelliotfields)",
@@ -20,7 +20,7 @@
   "module": "dist/index.mjs",
   "jsnext:main": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "repository": "github:adamelliotfields/react-library-template",
+  "repository": "github:adamelliotfields/react-library-template.git",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/adamelliotfields"
   },

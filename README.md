@@ -84,6 +84,10 @@ changelogs for releases automatically. If the version number is bumped, a packag
 You will need to create a GitHub [Personal Access Token](https://github.com/settings/tokens) with
 `repo` and `packages` scopes and store it in a secret named `GH_TOKEN` in your repository.
 
+Also, set `version` to `0.0.0-development` in [`package.json`](./package.json) and
+[`packagep-lock.json`](./package-lock.json). `semantic-release` will automatically bump it to
+`1.0.0` for your first release.
+
 You should familiarize yourself with how `semantic-release` works, including the
 [Angular Commit Message Format](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines)
 and the [default rules matching](https://github.com/semantic-release/commit-analyzer/blob/v8.0.1/README.md#default-rules-matching).
