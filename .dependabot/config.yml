@@ -1,0 +1,11 @@
+version: 1
+
+update_configs:
+  - package_manager: javascript
+    directory: '/'
+    update_schedule: weekly
+    # TODO: If you are not me, you should use your own username.
+    default_reviewers:
+      - adamelliotfields
+    default_labels:
+      - dependabot
