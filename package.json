@@ -34,7 +34,7 @@
     "lint": "eslint 'src/**/*'",
     "release": "semantic-release",
     "start": "start-storybook -p 6006",
-    "test": "cross-env NODE_ENV=test react-scripts test --coverage"
+    "test": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts test --coverage"
   },
   "dependencies": {},
   "peerDependencies": {
