@@ -9,3 +9,6 @@ update_configs:
       - adamelliotfields
     default_labels:
       - dependabot
+    ignored_updates:
+      - match:
+          dependency_name: react-scripts
