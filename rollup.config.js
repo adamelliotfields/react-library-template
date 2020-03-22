@@ -32,7 +32,7 @@ const commonjsOptions = {
 const babelOptions = {
   runtimeHelpers: true,
   exclude: ['node_modules/**/*'],
-  extensions: extensions.filter(ext => ext !== '.json'),
+  extensions: extensions.filter((ext) => ext !== '.json'),
 };
 
 const cjs = {

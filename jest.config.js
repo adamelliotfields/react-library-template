@@ -1,7 +1,7 @@
 const createJestConfig = require('react-scripts/scripts/utils/createJestConfig');
 const path = require('path');
 
-const jestConfig = createJestConfig(relativePath =>
+const jestConfig = createJestConfig((relativePath) =>
   path.join(__dirname, 'node_modules', 'react-scripts', relativePath),
 );
 
