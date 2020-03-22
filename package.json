@@ -30,11 +30,14 @@
     "bundle": "cross-env NODE_ENV=production rollup -c",
     "bundle:storybook": "cross-env NODE_ENV=production build-storybook",
     "clean": "rimraf dist",
+    "clean:coverage": "rimraf coverage",
     "clean:storybook": "rimraf storybook-static",
-    "lint": "eslint 'src/**/*'",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "release": "semantic-release",
     "start": "start-storybook -p 6006",
-    "test": "cross-env SKIP_PREFLIGHT_CHECK=true react-scripts test --coverage"
+    "test": "cross-env NODE_ENV=test jest --env=jest-environment-jsdom",
+    "test:watch": "run-s \"test -- --watchAll\"",
+    "test:coverage": "run-s \"test -- --coverage\""
   },
   "dependencies": {},
   "peerDependencies": {
@@ -78,13 +81,5 @@
     "rollup-plugin-typescript2": "^0.26.0",
     "semantic-release": "^17.0.4",
     "typescript": "^3.8.3"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts",
-      "!src/index.{js,jsx,ts,tsx}",
-      "!src/stories/**/*.{js,jsx,ts,tsx}"
-    ]
   }
 }
