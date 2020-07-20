@@ -103,7 +103,7 @@ settings, copy your **Test Reporter ID** and store it in a secret named `CC_TEST
 in your repository.
 
 
-Finally, create a `.codeclimate.yml` file like below:
+Next, create a `.codeclimate.yml` file like below:
 
 ```yaml
 version: '2'
@@ -153,6 +153,19 @@ exclude_patterns:
   - dist/
   - node_modules/
   - '**/*.d.ts'
+```
+
+Finally, add this step to `.github/workflows/build.yml` (below the `Test` step):
+
+```yaml
+- name: Code Climate
+  run: |
+    export GIT_COMMIT_SHA="$GITHUB_SHA"
+    export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
+    sudo wget -qO /usr/local/bin/cc-test-reporter https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+    sudo chmod +x /usr/local/bin/cc-test-reporter
+    cc-test-reporter format-coverage -t lcov ./coverage/lcov.info
+    cc-test-reporter upload-coverage
 ```
 
 ### Dependabot
