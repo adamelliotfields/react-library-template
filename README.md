@@ -102,7 +102,79 @@ reviews. You'll need to create a free account and add your repository. Then, in 
 settings, copy your **Test Reporter ID** and store it in a secret named `CC_TEST_REPORTER_ID` in
 in your repository.
 
+
+Finally, create a `.codeclimate.yml` file like below:
+
+```yaml
+version: '2'
+
+checks:
+  argument-count:
+    enabled: true
+    config: {}
+  complex-logic:
+    enabled: true
+    config: {}
+  file-lines:
+    enabled: true
+    config: {}
+  method-complexity:
+    enabled: true
+    config: {}
+  method-count:
+    enabled: true
+    config: {}
+  method-lines:
+    enabled: true
+    config: {}
+  nested-control-flow:
+    enabled: true
+    config: {}
+  return-statements:
+    enabled: true
+    config: {}
+  similar-code:
+    enabled: true
+    config: {}
+  identical-code:
+    enabled: true
+    config: {}
+
+plugins:
+  duplication:
+    enabled: true
+    config: {}
+  fixme:
+    enabled: true
+    config: {}
+
+exclude_patterns:
+  - coverage/
+  - dist/
+  - node_modules/
+  - '**/*.d.ts'
+```
+
 ### Dependabot
 
 Dependabot is used to keep your dependencies up-to-date. You just need to enable the
 [Dependabot Preview](https://github.com/marketplace/dependabot-preview) app from GitHub Marketplace.
+
+Then create a `.dependabot/config.yml` file like below:
+
+```yaml
+version: 1
+
+update_configs:
+  - package_manager: javascript
+    directory: '/'
+    update_schedule: weekly
+    # TODO: If you are not me, you should use your own username.
+    default_reviewers:
+      - adamelliotfields
+    default_labels:
+      - dependabot
+    ignored_updates:
+      - match:
+          dependency_name: react-scripts
+```
